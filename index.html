@@ -3,52 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-********" crossorigin="anonymous" />
+    <title>Student Feedback Form - APD College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .college-name {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .college-name h1 {
+            font-size: 36px;
+            color: #4CAF50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .designed-by {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <div class="container" id="container">
-        <h2>User Registration</h2>
-        <form action="/register" method="POST">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <div class="password-input">
-                    <input type="password" id="password" name="password" required>
-                    <span class="toggle-password" onclick="togglePassword()">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="role">Role:</label>
-                <select id="role" name="role" required>
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="administrator">Administrator</option>
-                </select>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-    </div>
 
-    <script>
-        function togglePassword() {
-            const passwordField = document.getElementById("password");
-            const passwordToggle = document.querySelector(".toggle-password");
-            
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                passwordToggle.innerHTML = '<i class="fas fa-eye-slash"></i>';
-            } else {
-                passwordField.type = "password";
-                passwordToggle.innerHTML = '<i class="fas fa-eye"></i>';
-            }
+<div class="container">
+    <div class="college-name">
+        <h1>Alipurduar (Damanpur) Government Polytechnic</h1>
+    </div>
+    <h2>Student Attandance Form</h2>
+    <form id="feedbackForm" onsubmit="return validateForm()">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="regNo">Registration Number:</label>
+        <input type="text" id="regNo" name="regNo" required>
+
+        <label for="rollNo">Roll Number:</label>
+        <input type="text" id="rollNo" name="rollNo" required>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="" disabled selected>Select department</option>
+            <option value="cst">Computer Science and Technology</option>
+            <option value="ee">Electrical Engineering</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+        </select>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+    <p class="designed-by">Designed by Team1</p>
+</div>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var regNo = document.getElementById('regNo').value;
+        var rollNo = document.getElementById('rollNo').value;
+        var department = document.getElementById('department').value;
+        var subject = document.getElementById('subject').value;
+        var feedback = document.getElementById('feedback').value;
+
+        if (name === '' || regNo === '' || rollNo === '' || department === '' || subject === '' || feedback === '') {
+            alert('Please fill out all fields');
+            return false;
         }
-    </script>
+        
+        // Redirect to thank you page after successful submission
+        window.location.href = 'thankyou.html';
+        
+        return false; // Prevent form submission (we handle it with JavaScript)
+    }
+</script>
+
 </body>
 </html>
