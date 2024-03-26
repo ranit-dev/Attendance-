@@ -6,15 +6,9 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   const formData = new FormData(form);
 
-  // Check if user has already submitted
-  if (localStorage.getItem('submitted')) {
-    alert('You have already submitted a response.');
-    return;
-  }
-
   // Disable the submit button and display loading text
   submitButton.disabled = true;
-  submitButton.innerHTML = 'Loading...';
+  submitButton.innerHTML = 'Submitting...';
 
   fetch(scriptURL, { method: 'POST', body: formData })
     .then(response => {
@@ -22,8 +16,6 @@ form.addEventListener('submit', e => {
         console.log('Success!', response);
         // Redirect to thankyou.html
         window.location.href = 'thankyou.html';
-        // Mark user as submitted
-        localStorage.setItem('submitted', true);
       } else {
         console.error('Error!', response.statusText);
         throw new Error('Failed to submit form');
