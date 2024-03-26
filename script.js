@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxeeeuQcWGusNVlt1GcjIvqXofb3c2CJ8RgjqwC5d5lnYkd2107rY4Mjo4fbUNI7WgXzw/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz6pNCdHFsn3c5raW7yHscv-SqB_ZcfUqk3rt_ipdh7BAmxkA2gxweLoIJ4DbPqXhH2SQ/exec';
 const form = document.forms['submit-to-google-sheet'];
 const submitButton = form.querySelector('button[type="submit"]');
 const subjectDropdown = document.querySelector('select[name="Subject"]');
