@@ -31,8 +31,8 @@
     }
 
     .form input[type="text"],
-    .form input[type="email"],
-    .form button {
+    .form button,
+    .form select {
         width: 100%;
         padding: 12px;
         border: none;
@@ -41,8 +41,7 @@
         font-size: 16px;
     }
 
-    .form input[type="text"],
-    .form input[type="email"] {
+    .form input[type="text"] {
         border: 1px solid #ccc;
     }
 
@@ -58,7 +57,7 @@
     }
 
     .form input[type="text"]:focus,
-    .form input[type="email"]:focus {
+    .form select:focus {
         outline: none;
         border-color: #4CAF50;
         box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
@@ -70,6 +69,50 @@
         margin-bottom: 20px;
         text-align: center;
     }
+    /* CSS styles for department dropdown */
+.form select[name="Department"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+}
+
+/* CSS styles for subject dropdown */
+.form select[name="Subject"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+}
+.form select[name="Year"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+}
+.form select[name="Semester"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+}
+
   </style>
 </head>
 <body>
@@ -81,8 +124,34 @@
         <input name="Name" type="text" placeholder="Name" required>
         <input name="Registration" type="text" placeholder="Registration" required>
         <input name="Roll" type="text" placeholder="Roll" required>
-        <input name="Department" type="text" placeholder="Department" required>
-        <input name="Subject" type="text" placeholder="Subject" required>
+        <!-- Year Dropdown Menu -->
+        <select name="Year" required>
+            <option value="">Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+        </select>
+        <!-- Semester Dropdown Menu -->
+        <select name="Semester" required>
+            <option value="">Select Semester</option>
+            <option value="1">1st Semester</option>
+            <option value="2">2nd Semester</option>
+            <option value="2">3rd Semester</option>
+            <option value="2">4th Semester</option>
+            <option value="2">5th Semester</option>
+            <option value="2">6th Semester</option>
+        </select>
+        <!-- Department Dropdown Menu -->
+        <select name="Department" required>
+            <option value="">Select Department</option>
+            <option value="CST">CST</option>
+            <option value="EE">EE</option>
+            <option value="ECE">ECE</option>
+        </select>
+        <!-- Subject Dropdown Menu (Populated dynamically based on selected Year, Semester, and Department) -->
+        <select name="Subject" required>
+            <option value="">Select Subject</option>
+        </select>
         <input name="Feedback" type="text" placeholder="Feedback" required>
         <button type="submit">Send</button>
     </form>
