@@ -1,0 +1,17 @@
+.custom-form-container {
+    max-width: 28rem; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: white; 
+    padding: 2rem; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 10px 15px rgba(0, 121, 107, 0.5); 
+}
+.custom-footer {
+    background-color: #00796B;
+    padding-top: 2rem; /* Equivalent to py-8 */
+    padding-bottom: 2rem; /* Equivalent to py-8 */
+}
+body{
+    font-family: "Funnel Display", serif;
+}
