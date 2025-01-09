@@ -229,7 +229,7 @@ nav ul li a {
 }
 .services-list {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 20px; 
 }
 .service-item {
@@ -278,6 +278,15 @@ nav ul li a {
 }
 .service-item-12 {
     background-color: #E0F2F1; 
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .services h2 {
+        font-size: 30px;
+    }
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust columns for smaller screens */
+    }
 }
 /* Footer */
 footer {
