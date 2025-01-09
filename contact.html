@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Attendance Management System</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="style2.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Glow effect on input hover */
+    input.glow:hover {
+        box-shadow: 0 0 5px #000000;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+<nav style="background-color: #00796B;">
+    <div class="container mx-auto px-4">
+        <ul class="flex justify-center items-center py-4">
+            <!-- Navbar Links -->
+            <li>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-white hover:text-gray-200 transition duration-300">Home</a></li>
+                    <li><a href="contact.html" class="text-white hover:text-gray-200 transition duration-300">Contact Us</a></li>
+                    <li><a href="signup.html" class="text-white hover:text-gray-200 transition duration-300">Sign Up</a></li>
+                    <li><a href="login.html" class="text-white hover:text-gray-200 transition duration-300">Login</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  </nav>
+
+
+  <!-- Contact Section -->
+  <div class="container mx-auto px-4 py-8 max-w-md">
+    <div class="custom-form-container">
+      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+      <form>
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Your Name</label>
+          <input type="text" id="name" name="name" class="w-full rounded-md border-black border-2 focus:border-blue-500 focus:ring-blue-500 glow">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">Your Email</label>
+          <input type="email" id="email" name="email" class="w-full rounded-md border-black border-2 focus:border-blue-500 focus:ring-blue-500 glow">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 font-bold mb-2">Your Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full rounded-md border-black border-2 focus:border-blue-500 focus:ring-blue-500 glow"></textarea>
+        </div>
+        <button type="submit" class="w-full text-white font-bold py-2 px-4 rounded transition duration-300" style="background-color: #00796B;">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-4 md:mb-0">
+          <h5 class="text-lg font-bold mb-2 text-white">Quick Links</h5>
+          <ul>
+            <li><a href="#" class="text-white hover:text-gray-200">About Us</a></li>
+            <li><a href="contact.html" class="text-white hover:text-gray-200">Contact Us</a></li>
+            <li><a href="#" class="text-white hover:text-gray-200">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-lg font-bold mb-2 text-white">Contact Information</h5>
+          <p class="text-white">City Hospital<br>58, Canal Circular Rd, Kadapara,
+            Kankurgachi<br>
+            kolkata - 700003
+            <br>Email: city-hospityal@gmail.com<br>Call - 8670582298</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+</body>
+</html>
